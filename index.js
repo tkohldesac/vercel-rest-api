@@ -6,4 +6,9 @@ server.get("/", (_, res) => {
   res.send("IT WORKS!");
 })
 
+server.patch("/", (_, res) => {
+  console.log("this works too")
+  res.json({ rand: Math.random() });
+})
+
 server.listen(3000);
