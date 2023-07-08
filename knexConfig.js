@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const client = require('knex')({
   client: 'pg',
   connection: process.env.POSTGRES_URL + "?sslmode=require",
