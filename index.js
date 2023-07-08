@@ -1,7 +1,9 @@
 const express = require("express");
 const server = express();
+const knex = require("./knexConfig");
 
-server.get("/", (_, res) => {
+server.get("/", async (_, res) => {
+  await knex('users').insert({ full_name: "Abel" })
   console.log("it worked")
   res.send("IT WORKS!");
 })
@@ -11,4 +13,4 @@ server.patch("/", (_, res) => {
   res.json({ rand: Math.random() });
 })
 
-server.listen(3000);
+server.listen(3001);
